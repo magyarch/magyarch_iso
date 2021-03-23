@@ -1,0 +1,66 @@
+#!/bin/sh
+
+greeting () { 
+# yad --text="Welcome to the Magyarch installer.\nPlease make sure \
+# you have an active Internet connection.\nTo connect via Wi-Fi, click \
+# the network icon in the panel.\nIf you are using a wired connection, \
+# Network Manager\nwill automatically detect and connect.\n"
+start=$(yad --width=400 --height=250 --title="MagyArch Linux" --text="" \
+--form --date-format="%-d %B %Y" \
+--field="Welcome to the Magyarch installer.\nPlease make sure \
+you have an active Internet connection.\nTo connect via Wi-Fi, click \
+the network icon in the panel.\nIf you are using a wired connection, \
+Network Manager\nwill automatically detect and connect.\n":LBL \
+--field="Version::CB" "" "added_iso_version!Test")
+ans=$?
+echo $ans
+
+if [ "$ans" = "1" ]
+then
+    exit
+    echo "quit"
+
+fi
+VERSION=$(echo $start | cut -d "|" -f2)
+echo $VERSION > /version.txt
+
+}
+
+# function to run installer, and provide choices to user after installer closes
+run_installer() {
+  cd /
+  if [ "$VERSION" = "added_iso_version" ]
+  then
+      git clone -b $VERSION --single-branch https://github.com/magyarchlinux/installer
+      cd /installer
+      ./ayi
+  else
+      git clone --depth 5 https://github.com/magyarchlinux/installer
+      cd /installer
+      ./ayi
+  fi
+  # ans=$(zenity --list --title="$title" --radiolist --text "Mit szeretne most csinálni?"  --column "Választ" --column "Opciók" FALSE Újraindítás FALSE Bezárás FALSE "Chroot az új rendszeren" FALSE "Megynyitni a pacman.conf-ot")
+	# if [ "$ans" = "Újraindítás" ]
+	# then reboot
+	# elif [ "$ans" = "Chroot az új rendszeren" ]
+	# then sudo mount $(cat root_part.txt) /mnt
+  #    lxterminal -e sudo arch-chroot /mnt
+  #    umount -R /mnt
+	# elif [ "$ans" = "Megynyitni a pacman.conf-ot" ]
+	# then sudo mount $(cat root_part.txt) /mnt
+	# lxterminal -e sudo nano /mnt/etc/pacman.conf     
+	# else exit
+	# fi
+}
+
+# Futatás
+greeting
+# Internetkapcsolat ellenőrzés
+if [[ ! $(ping -c 1 google.com) ]]
+then
+    yad --text "No internet connection detected, please try again."
+    greeting
+fi
+
+run_installer
+

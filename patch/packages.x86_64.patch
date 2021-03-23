@@ -1,0 +1,56 @@
+diff --git a/packages.x86_64 b/home/krive/21/packages.x86_64
+index 4539067..ef690dd 100644
+--- a/packages.x86_64
++++ b/home/krive/21/packages.x86_64
+@@ -1,3 +1,43 @@
++# xorg
++xorg-drivers
++xorg-server
++xorg-xinit
++xorg-twm
++xterm
++
++lightdm
++lightdm-gtk-greeter
++
++# audio.
++alsa-utils
++
++# themes
++# numix-gtk-theme
++faenza-icon-theme
++
++
++# virtualbox
++# virtualbox-guest-utils
++# virtualbox-guest-modules-arch
++
++# cinemon
++cinnamon
++
++# egyéb
++base-devel
++yad
++# zenity
++reflector
++git
++firefox
++lxterminal
++leafpad
++bash-completion
++efitools
++gparted
++
++
++
+ #
+ # SPDX-License-Identifier: GPL-3.0-or-later
+ alsa-utils
+@@ -10,7 +50,6 @@ brltty
+ broadcom-wl
+ btrfs-progs
+ clonezilla
+-cloud-init
+ crda
+ darkhttpd
+ ddrescue

@@ -1,0 +1,33 @@
+diff --git a/profiledef.sh b/home/krive/21.04/profiledef.sh
+old mode 100755
+new mode 100644
+index 3e68d86..2d45ebd
+--- a/profiledef.sh
++++ b/home/krive/21.04/profiledef.sh
+@@ -1,11 +1,11 @@
+ #!/usr/bin/env bash
+ # shellcheck disable=SC2034
+ 
+-iso_name="MagyArchLinux"
+-iso_label="MagyArch_Linux_x86_64"
+-iso_publisher="MagyArch Linux <https://magyarchlinux.org>"
+-iso_application="MagyArch Linux Live"
+-iso_version=""
++iso_name="archlinux"
++iso_label="ARCH_$(date +%Y%m)"
++iso_publisher="Arch Linux <https://archlinux.org>"
++iso_application="Arch Linux Live/Rescue CD"
++iso_version="$(date +%Y.%m.%d)"
+ install_dir="arch"
+ bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
+ arch="x86_64"
+@@ -18,9 +18,4 @@ file_permissions=(
+   ["/usr/local/bin/choose-mirror"]="0:0:755"
+   ["/usr/local/bin/Installation_guide"]="0:0:755"
+   ["/usr/local/bin/livecd-sound"]="0:0:755"
+-  ["/usr/bin/beallit"]="0:0:755"
+-  ["/usr/bin/Magyarcs"]="0:0:755"
+-  ["/etc/skel/inditó.desktop"]="0:0:755"
+-  ["/etc/skel/Desktop/inditó.desktop"]="0:0:755"
+-  ["/indito"]="0:0:755"
+ )

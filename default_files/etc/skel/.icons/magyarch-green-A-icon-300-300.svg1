@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="300"
+   viewBox="0 0 79.374998 79.375002"
+   version="1.1"
+   id="svg946"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="magyarch-green-ascii-icon-300-300.svg">
+  <defs
+     id="defs940" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="158.57143"
+     inkscape:cy="65.714286"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata943">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-217.62498)">
+    <path
+       sodipodi:nodetypes="cccccsccccsccccscccccccccccccc"
+       style="opacity:1;fill:#2e8b57;fill-opacity:1;stroke-width:0.15492931"
+       d="m 39.85334,217.70913 c -0.06287,-0.0211 -0.241982,0.39674 -0.398365,0.92918 -1.301483,4.43016 -3.580291,9.2301 -6.477218,13.64188 -0.783465,1.19302 -0.880535,1.41869 -0.728063,1.70365 0.09673,0.18074 1.490553,2.30373 3.096924,4.71748 2.63687,3.96207 3.078026,4.68651 2.851386,4.68651 -0.03817,0 -1.869197,-1.53378 -4.067718,-3.40829 -2.198465,-1.87451 -4.101379,-3.40548 -4.22919,-3.40248 -0.127793,0.004 -0.728325,0.68246 -1.33432,1.51027 -1.855034,2.53409 -1.807958,1.95418 -0.373219,4.64593 0.683719,1.28262 1.24249,2.37296 1.24249,2.42303 0,0.24589 -0.497194,-0.006 -2.13006,-1.08003 -0.979588,-0.64414 -1.86929,-1.1375 -1.976333,-1.09645 -0.239457,0.0919 -6.083101,9.82864 -8.93894,14.89398 C 8.893848,271.17095 3.652476,282.37584 1.32461,290.07903 0.697827,292.15328 0,295.42548 0,296.29034 v 0.57433 l 1.278226,-0.88953 c 17.505298,-17.99424 34.482942,-24.52692 77.025484,-0.009 l 1.07129,0.95046 -0.09767,-1.85934 C 78.693957,283.89566 70.05006,264.24979 55.419258,240.83267 51.301433,234.24187 40.26557,217.84822 39.853284,217.70945 Z m 1.233715,29.86439 c 3.038229,3.29527 10.664025,11.85351 17.994914,27.10389 -10.945641,-5.65085 -18.994074,-9.02263 -33.644,-4.12572 4.884319,-7.58898 6.577806,-11.08498 15.566946,-22.82443 0.03218,-0.0881 0.06848,-0.15717 0.0812,-0.1538 z"
+       id="path1935"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/foo/Documents/MagyArch/test-ascii/previview-2.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

@@ -1,0 +1,141 @@
+#!/bin/sh
+
+set -uo pipefail
+trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+
+
+clear
+
+# def colors
+
+BBLACK='tput setab 0'
+BRED='tput setab 1'
+BGREEN='tput setab 2'
+FBLACK='tput setaf 0'
+FRED='tput setaf 1'
+FGREEN='tput setaf 2'
+FWHITE='tput setaf 7'
+# c="$(echo "setaf 6 setab 7" | 'tput -S ')"
+
+app_name="${0##*/}"
+installed_kernel=$(pacman -Q linux | cut -d' ' -f2 | sed -e 's/.\([^.]*\)$/-\1/')
+loaded_kernel=$(uname -r | cut -d- -f1-3)
+
+# Iso version 
+# echo ${a}
+
+# tput setb 0
+# tput setf 7
+$FWHITE; $BBLACK
+
+read -e -i "$(echo v$(date +%Y.%m --date='+1 month'))" -p "Add iso version number -> " iso_version
+
+# Setter info and error
+
+_msg_info() {
+    local _msg="${1}"
+    tput bold; $FBLACK; $BGREEN
+    printf '[%s] INFO: %s\n' "${app_name}" "${_msg}"
+    tput sgr0; $FWHITE; $BBLACK
+    
+    
+}
+
+_msg_error() {
+    
+    local _msg="${1}"
+    local _error=${2}
+    tput bold; $FBLACK; $BRED
+    printf '[%s] ERROR: %s\n' "${app_name}" "${_msg}" >&2
+
+    if (( _error > 0 ))
+    then
+        tput sgr0
+        exit "${_error}"
+    fi
+}
+
+# Kernel check
+
+kernel_check() {
+    _msg_info "Kernel version check..."
+    if [[ "$installed_kernel" != "$loaded_kernel" ]]
+    then
+        _msg_info "The loaded (${loaded_kernel}) and installed (${installed_kernel}) kernel version is different!!!"
+        _msg_error "Restart the computer before running the script !!!" 1
+    else
+        _msg_info "The loaded and installed kernel version (${loaded_kernel}) match."
+
+    fi
+}
+
+# Copy default iso.
+
+iso_copy() {
+    # Iso inszall
+    sudo pacman -S archiso --needed --noconfirm
+
+    # Create folder and copy
+    default_dir="$iso_version"
+    sudo mkdir -p $default_dir
+    sudo cp -rf   /usr/share/archiso/configs/releng/* $default_dir
+
+    # Magyarch files copy
+    _msg_info "Copy default arch iso files..."
+    sudo cp -rP default_files/* $iso_version/airootfs
+    _msg_info "Coppy finish!!!!"
+
+}
+
+# Iso patch
+
+iso_patch() {
+    _msg_info "Patch files..."
+    
+    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/archiso-x86_64-linux.conf.patch 
+    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/archiso-x86_64-speech-linux.conf.patch
+    sudo patch -p1 -d $iso_version/syslinux/ <  patch/archiso_sys-linux.cfg.patch
+    sudo patch -p1 -d $iso_version/ <  patch/packages.x86_64.patch
+    sudo patch -R -p1 -d $iso_version/ <  patch/profiledef.sh.patch
+    _msg_info "Patch finish!!!"
+}
+
+# Edit files.
+
+iso_name() {
+    _msg_info "Edit files..."
+    sudo sed -i "s|iso_version=\"|iso_version=\"${iso_version:1}|" "$iso_version/profiledef.sh"
+    sudo sed -i "s|added_iso_version|${iso_version}|g" "$iso_version/airootfs/indito"
+    _msg_info "Edit files finish"
+
+}
+
+# Iso build
+
+iso_build() {
+    _msg_info "Run iso build..."
+    cd $iso_version
+    sudo mkarchiso -v .
+    cd ..
+    _msg_info "Iso build finish!!!!"
+
+}
+
+# Copy iso default folde and clean.
+
+clean_folder() {
+    _msg_info "Run cleaning..."
+    cp $iso_version/out/*.iso .
+    sudo rm -rf $iso_version
+    _msg_info "Clean finished!!!"
+    _msg_info "Done!!! ISO created finish!!!"
+
+    tput sgr0
+}
+
+kernel_check
+iso_copy
+iso_patch
+iso_name
+iso_build
+clean_folder
