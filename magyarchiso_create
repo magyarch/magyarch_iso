@@ -15,17 +15,13 @@ FBLACK='tput setaf 0'
 FRED='tput setaf 1'
 FGREEN='tput setaf 2'
 FWHITE='tput setaf 7'
-# c="$(echo "setaf 6 setab 7" | 'tput -S ')"
 
 app_name="${0##*/}"
 installed_kernel=$(pacman -Q linux | cut -d' ' -f2 | sed -e 's/.\([^.]*\)$/-\1/')
 loaded_kernel=$(uname -r | cut -d- -f1-3)
 
 # Iso version 
-# echo ${a}
 
-# tput setb 0
-# tput setf 7
 $FWHITE; $BBLACK
 
 read -e -i "$(echo v$(date +%Y.%m --date='+1 month'))" -p "Add iso version number -> " iso_version
