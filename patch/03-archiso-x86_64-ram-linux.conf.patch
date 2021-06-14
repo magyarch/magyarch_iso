@@ -1,0 +1,16 @@
+diff --git a/03-archiso-x86_64-ram-linux.conf b/03-archiso-x86_64-ram-linux.conf
+index 9eba5a9..5935e68 100644
+--- a/03-archiso-x86_64-ram-linux.conf
++++ b/03-archiso-x86_64-ram-linux.conf
+@@ -1,9 +1,9 @@
+ #
+ # SPDX-License-Identifier: GPL-3.0-or-later
+ 
+-title   Arch Linux install medium (x86_64, UEFI, Copy to RAM)
++title   MagyArch Linux install medium (x86_64, UEFI, Copy to RAM)
+ linux   /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux
+ initrd  /%INSTALL_DIR%/boot/intel-ucode.img
+ initrd  /%INSTALL_DIR%/boot/amd-ucode.img
+ initrd  /%INSTALL_DIR%/boot/x86_64/initramfs-linux.img
+-options archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram
++options archisobasedir=%INSTALL_DIR% cow_spacesize=4G archisolabel=%ARCHISO_LABEL% copytoram

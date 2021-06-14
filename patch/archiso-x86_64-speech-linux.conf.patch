@@ -1,7 +1,7 @@
-diff --git a/archiso-x86_64-speech-linux.conf b/home/krive/21/efiboot/loader/entries/archiso-x86_64-speech-linux.conf
+diff --git a/02-archiso-x86_64-speech-linux.conf b/02-archiso-x86_64-speech-linux.conf
 index 632c446..46c9c24 100644
---- a/archiso-x86_64-speech-linux.conf
-+++ b/home/krive/21/efiboot/loader/entries/archiso-x86_64-speech-linux.conf
+--- a/02-archiso-x86_64-speech-linux.conf
++++ b/02-archiso-x86_64-speech-linux.conf
 @@ -1,9 +1,9 @@
  #
  # SPDX-License-Identifier: GPL-3.0-or-later

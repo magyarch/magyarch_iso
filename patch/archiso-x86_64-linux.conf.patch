@@ -1,7 +1,7 @@
-diff --git a/archiso-x86_64-linux.conf b/home/krive/21/efiboot/loader/entries/archiso-x86_64-linux.conf
+diff --git a/01-archiso-x86_64-linux.conf b/01-archiso-x86_64-linux.conf
 index 1a14b11..91f5033 100644
---- a/archiso-x86_64-linux.conf
-+++ b/home/krive/21/efiboot/loader/entries/archiso-x86_64-linux.conf
+--- a/01-archiso-x86_64-linux.conf
++++ b/01-archiso-x86_64-linux.conf
 @@ -1,9 +1,9 @@
  #
  # SPDX-License-Identifier: GPL-3.0-or-later

@@ -1,8 +1,8 @@
-diff --git a/profiledef.sh.orig b/profiledef.sh
+diff --git a/profiledef.sh b/profiledef.sh
 old mode 100644
 new mode 100755
-index d5f8bcb..d2db6ba
---- a/profiledef.sh.orig
+index 5feb205..6597f8a
+--- a/profiledef.sh
 +++ b/profiledef.sh
 @@ -1,11 +1,11 @@
  #!/usr/bin/env bash
@@ -19,9 +19,9 @@ index d5f8bcb..d2db6ba
 +iso_application="MagyArch Linux Live"
 +iso_version=""
  install_dir="arch"
+ buildmodes=('iso')
  bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
- arch="x86_64"
-@@ -19,4 +19,9 @@ file_permissions=(
+@@ -20,4 +20,9 @@ file_permissions=(
    ["/usr/local/bin/choose-mirror"]="0:0:755"
    ["/usr/local/bin/Installation_guide"]="0:0:755"
    ["/usr/local/bin/livecd-sound"]="0:0:755"
