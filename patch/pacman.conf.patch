@@ -1,0 +1,12 @@
+diff --git a/pacman.conf b/pacman.conf
+index 9d895e9..0568ee3 100644
+--- a/pacman.conf
++++ b/pacman.conf
+@@ -100,3 +100,7 @@ Include = /etc/pacman.d/mirrorlist
+ #[custom]
+ #SigLevel = Optional TrustAll
+ #Server = file:///home/custompkgs
++
++[magyarch_repo]
++SigLevel = Optional TrustedOnly
++Server = https://magyarchlinux.github.io/$repo/$arch
