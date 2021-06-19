@@ -95,6 +95,7 @@ iso_patch() {
     sudo patch -p1 -d $iso_version/ <  patch/packages.x86_64.patch
     sudo patch -p1 -d $iso_version/ <  patch/profiledef.sh.patch
     sudo patch -p1 -d $iso_version/ <  patch/pacman.conf.patch
+    sudo cp $iso_version/pacman.conf $iso_version/airootfs/etc
     _msg_info "Patch finish!!!"
 }
 
