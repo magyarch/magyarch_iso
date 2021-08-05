@@ -1,8 +1,8 @@
-diff --git a/pacman.conf b/pacman.conf
-index 9d895e9..0568ee3 100644
---- a/pacman.conf
+diff --git a/v2021.09/pacman.conf b/pacman.conf
+index 5ee6c1e..74614c9 100644
+--- a/v2021.09/pacman.conf
 +++ b/pacman.conf
-@@ -100,3 +100,7 @@ Include = /etc/pacman.d/mirrorlist
+@@ -99,3 +99,7 @@ Include = /etc/pacman.d/mirrorlist
  #[custom]
  #SigLevel = Optional TrustAll
  #Server = file:///home/custompkgs

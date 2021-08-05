@@ -1,11 +1,8 @@
 diff --git a/02-archiso-x86_64-speech-linux.conf b/02-archiso-x86_64-speech-linux.conf
-index 632c446..46c9c24 100644
+index 06f5466..7d159e9 100644
 --- a/02-archiso-x86_64-speech-linux.conf
 +++ b/02-archiso-x86_64-speech-linux.conf
-@@ -1,9 +1,9 @@
- #
- # SPDX-License-Identifier: GPL-3.0-or-later
- 
+@@ -1,6 +1,6 @@
 -title   Arch Linux install medium (x86_64, UEFI) with speech
 +title   MagyArch Linux install medium (x86_64, UEFI) with speech
  linux   /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux

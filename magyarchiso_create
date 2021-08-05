@@ -88,10 +88,10 @@ iso_copy() {
 iso_patch() {
     _msg_info "Patch files..."
     
-    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/archiso-x86_64-linux.conf.patch 
-    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/archiso-x86_64-speech-linux.conf.patch
+    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/01-archiso-x86_64-linux.conf.patch
+    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/02-archiso-x86_64-speech-linux.conf.patch
     sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/03-archiso-x86_64-ram-linux.conf.patch
-    sudo patch -R -p1 -d $iso_version/syslinux/ <  patch/archiso_sys-linux.cfg.patch
+    sudo patch -p1 -d $iso_version/syslinux/ <  patch/archiso_sys-linux.cfg.patch
     sudo patch -p1 -d $iso_version/ <  patch/packages.x86_64.patch
     sudo patch -p1 -d $iso_version/ <  patch/profiledef.sh.patch
     sudo patch -p1 -d $iso_version/ <  patch/pacman.conf.patch
@@ -138,3 +138,4 @@ iso_patch
 iso_name
 iso_build
 clean_folder
+
