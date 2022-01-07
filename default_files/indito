@@ -1,6 +1,6 @@
 #!/bin/sh
 
-greeting () { 
+greeting () {
 # yad --text="Welcome to the Magyarch installer.\nPlease make sure \
 # you have an active Internet connection.\nTo connect via Wi-Fi, click \
 # the network icon in the panel.\nIf you are using a wired connection, \
@@ -31,11 +31,11 @@ run_installer() {
   cd /
   if [ "$VERSION" = "added_iso_version" ]
   then
-      git clone -b $VERSION --single-branch https://github.com/magyarchlinux/installer
+      git clone -b $VERSION --single-branch https://github.com/magyarch/installer.git
       cd /installer
       ./ayi
   else
-      git clone --depth 5 https://github.com/magyarchlinux/installer
+      git clone --depth 5 https://github.com/magyarch/installer.git
       cd /installer
       ./ayi
   fi
@@ -48,7 +48,7 @@ run_installer() {
   #    umount -R /mnt
 	# elif [ "$ans" = "Megynyitni a pacman.conf-ot" ]
 	# then sudo mount $(cat root_part.txt) /mnt
-	# lxterminal -e sudo nano /mnt/etc/pacman.conf     
+	# lxterminal -e sudo nano /mnt/etc/pacman.conf
 	# else exit
 	# fi
 }
