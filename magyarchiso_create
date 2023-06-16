@@ -20,7 +20,7 @@ app_name="${0##*/}"
 installed_kernel=$(pacman -Q linux | cut -d' ' -f2 | sed -e 's/.\([^.]*\)$/-\1/')
 loaded_kernel=$(uname -r | cut -d- -f1-3)
 
-# Iso version 
+# Iso version
 
 $FWHITE; $BBLACK
 
@@ -33,12 +33,12 @@ _msg_info() {
     tput bold; $FBLACK; $BGREEN
     printf '[%s] INFO: %s\n' "${app_name}" "${_msg}"
     tput sgr0; $FWHITE; $BBLACK
-    
-    
+
+
 }
 
 _msg_error() {
-    
+
     local _msg="${1}"
     local _error=${2}
     tput bold; $FBLACK; $BRED
@@ -87,10 +87,10 @@ iso_copy() {
 
 iso_patch() {
     _msg_info "Patch files..."
-    
+
     sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/01-archiso-x86_64-linux.conf.patch
     sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/02-archiso-x86_64-speech-linux.conf.patch
-    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/03-archiso-x86_64-ram-linux.conf.patch
+#    sudo patch -p1 -d $iso_version/efiboot/loader/entries/ <  patch/03-archiso-x86_64-ram-linux.conf.patch
     sudo patch -p1 -d $iso_version/syslinux/ <  patch/archiso_sys-linux.cfg.patch
     sudo patch -p1 -d $iso_version/ <  patch/packages.x86_64.patch
     sudo patch -p1 -d $iso_version/ <  patch/profiledef.sh.patch
