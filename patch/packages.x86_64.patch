@@ -39,10 +39,6 @@ index 28b2311..9db1d70 100644
 +efitools
 +gparted
 +linux-headers
-+nvidia
-+nvidia-utils
-+nvidia-settings
-+libglvnd
 +rtl88x2bu-dkms-git
 +
 +# Installer

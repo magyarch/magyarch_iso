@@ -13,8 +13,6 @@ index 5feb205..6597f8a
 -iso_publisher="Arch Linux <https://archlinux.org>"
 -iso_application="Arch Linux Live/Rescue CD"
 -iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
-+profile_name="MagyArchLinux"
-+profile_label="MagyArch_Linux_x86_64"
 +iso_name="MagyArchLinux"
 +iso_label="MagyArch_Linux_x86_64"
 +iso_publisher="MagyArch Linux <https://magyarchlinux.org>"
