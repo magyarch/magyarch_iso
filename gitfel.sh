@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # checking if I have the latest files from github
 echo "Checking for newer files online first"

@@ -4,6 +4,19 @@
 
 set -e -u
 
+# NVIDIA modulok betöltése automatikusan
+echo -e "nvidia\nnvidia_modeset\nnvidia_uvm\nnvidia_drm" > /etc/modules-load.d/nvidia.conf
+
+# Nouveau tiltása, DRM mód engedélyezése
+cat > /etc/modprobe.d/nvidia.conf <<EOF
+blacklist nouveau
+options nvidia_drm modeset=1
+EOF
+
+# Xorg konfiguráció
+if command -v nvidia-xconfig &>/dev/null; then
+    nvidia-xconfig
+fi
 # Warning: customize_airootfs.sh is deprecated! Support for it will be removed in a future archiso version.
 
 sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
